@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  rhtap/gitops: sample-ogx-lucas-oct12-gitops-2
+  janus-idp.io/tekton: sample-ogx-lucas-oct12-gitops-2
+  backstage.io/kubernetes-id: sample-ogx-lucas-oct12-gitops-2
+  backstage.io/kubernetes-namespace: rhdh-app
+  app.kubernetes.io/part-of: sample-ogx-lucas-oct12-gitops-2
+resources:
+  - application-dev.yaml

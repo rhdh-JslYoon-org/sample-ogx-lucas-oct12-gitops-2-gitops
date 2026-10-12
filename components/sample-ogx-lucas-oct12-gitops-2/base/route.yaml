@@ -1,0 +1,23 @@
+# Route for Streamlit UI Application (OpenShift)
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    app.kubernetes.io/instance: sample-ogx-lucas-oct12-gitops-2
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: sample-ogx-lucas-oct12-gitops-2
+  name: sample-ogx-lucas-oct12-gitops-2
+spec:
+  port:
+    targetPort: 8501
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: sample-ogx-lucas-oct12-gitops-2
+    weight: 100
+  wildcardPolicy: None
+

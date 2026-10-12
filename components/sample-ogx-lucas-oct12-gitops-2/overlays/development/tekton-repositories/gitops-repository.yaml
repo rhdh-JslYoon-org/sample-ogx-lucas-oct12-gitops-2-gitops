@@ -1,0 +1,6 @@
+apiVersion: "pipelinesascode.tekton.dev/v1alpha1"
+kind: Repository
+metadata:
+  name: sample-ogx-lucas-oct12-gitops-2-gitops-repository
+spec:
+  url: https://github.com/rhdh-JslYoon-org/sample-ogx-lucas-oct12-gitops-2-gitops

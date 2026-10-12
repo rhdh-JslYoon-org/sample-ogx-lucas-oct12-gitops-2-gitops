@@ -1,0 +1,20 @@
+# Service for Kubernetes MCP Server
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  labels:
+    app.kubernetes.io/instance: sample-ogx-lucas-oct12-gitops-2-mcp-server
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: sample-ogx-lucas-oct12-gitops-2-mcp-server
+  name: sample-ogx-lucas-oct12-gitops-2-mcp-server
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+      name: http
+  selector:
+    app.kubernetes.io/instance: sample-ogx-lucas-oct12-gitops-2-mcp-server
+
